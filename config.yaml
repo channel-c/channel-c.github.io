@@ -1,0 +1,7 @@
+output_dir: output
+marker:
+  command: marker
+vlm:
+  endpoint: https://api.deepseek.com/vl/v1
+enriched_filename: book_enriched.md
+image_descriptions_json: images_desc.json
