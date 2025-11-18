@@ -42,7 +42,7 @@ Adjust the Marker command or VLM endpoint to match your environment, and change 
 ## Usage plan
 The end-to-end workflow consists of three automated stages. You only run a single command:
 
-1. **Marker extraction** – `cli.py` calls `extractor/marker_wrapper.py`, which invokes `marker <pdf> -o <output_dir>` to generate `book.md` plus an `images/` folder.
+1. **Marker extraction** – `cli.py` calls `extractor/marker_wrapper.py`, which invokes the Marker CLI (compatible with `-o`, `--output-dir`, or positional output arguments) to generate `book.md` plus an `images/` folder.
 2. **VLM image descriptions** – `vlm/vlm_client.py` uploads every extracted image to the configured VLM endpoint using your API key, saving the responses to `images_desc.json`.
 3. **Markdown merge** – `merger/md_merger.py` scans `book.md`, finds Markdown image references, and injects the AI-generated captions underneath each figure, producing `book_enriched.md`.
 
